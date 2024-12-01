@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyp45pm312maq"]
+
+[ext_resource type="Script" path="res://setting.gd" id="1_rlpnq"]
+[ext_resource type="Texture2D" uid="uid://b5fik5oqau6oa" path="res://asset/2up.png" id="2_k7iws"]
+[ext_resource type="FontFile" uid="uid://c6kv74qc33mgu" path="res://asset/Lacquer-Regular.ttf" id="3_jwyc7"]
+[ext_resource type="Script" path="res://brightness.gd" id="4_yj652"]
+[ext_resource type="PackedScene" uid="uid://56eocaaq0sgy" path="res://Volume.tscn" id="5_i0emq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oul3m"]
+texture = ExtResource("2_k7iws")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uevp1"]
+font = ExtResource("3_jwyc7")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_4dn34"]
+font = ExtResource("3_jwyc7")
+font_size = 50
+
+[node name="option" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rlpnq")
+metadata/_edit_vertical_guides_ = [10.0]
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.160784)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oul3m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -136.0
+offset_right = 174.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Brightness
+"
+label_settings = SubResource("LabelSettings_uevp1")
+horizontal_alignment = 1
+
+[node name="Brightness" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+min_value = 0.5
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("4_yj652")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Volume
+"
+label_settings = SubResource("LabelSettings_4dn34")
+horizontal_alignment = 1
+
+[node name="Volume" parent="VBoxContainer" instance=ExtResource("5_i0emq")]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 493.0
+offset_top = 521.0
+offset_right = 682.0
+offset_bottom = 583.0
+theme_override_fonts/font = ExtResource("3_jwyc7")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="value_changed" from="VBoxContainer/Brightness" to="VBoxContainer/Brightness" method="_on_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
