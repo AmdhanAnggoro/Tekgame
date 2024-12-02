@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8vk8wgu4eoag"]
+
+[ext_resource type="FontFile" uid="uid://c6kv74qc33mgu" path="res://asset/Lacquer-Regular.ttf" id="1_bi2oc"]
+[ext_resource type="Script" path="res://creidt.gd" id="1_xm82q"]
+
+[sub_resource type="Theme" id="Theme_8blnk"]
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xm82q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00524, 1.00786)
+theme = SubResource("Theme_8blnk")
+color = Color(0, 0, 0, 1)
+
+[node name="dapa2" type="Label" parent="ColorRect"]
+layout_mode = 2
+offset_left = 424.774
+offset_top = 124.025
+offset_right = 782.774
+offset_bottom = 208.025
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 70
+text = "Credit"
+horizontal_alignment = 1
+
+[node name="nama" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 229.796
+offset_top = 225.23
+offset_right = 587.796
+offset_bottom = 391.23
+
+[node name="dapa" type="Label" parent="ColorRect/nama"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "Muhmmad Daffa Abiyyu Muhana"
+horizontal_alignment = 2
+
+[node name="Esa" type="Label" parent="ColorRect/nama"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "Rizki Esa Fadillah"
+horizontal_alignment = 2
+
+[node name="iki" type="Label" parent="ColorRect/nama"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "Farhan Rizki Gunawan"
+horizontal_alignment = 2
+
+[node name="dimas" type="Label" parent="ColorRect/nama"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "Dimas Saputra"
+horizontal_alignment = 2
+
+[node name="amdhan" type="Label" parent="ColorRect/nama"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "Amdhan Anggoro"
+horizontal_alignment = 2
+
+[node name="jobdesk" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 623.732
+offset_top = 226.222
+offset_right = 981.732
+offset_bottom = 392.222
+
+[node name="dapa" type="Label" parent="ColorRect/jobdesk"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "Game Director"
+
+[node name="Esa" type="Label" parent="ColorRect/jobdesk"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "Programmer"
+
+[node name="iki" type="Label" parent="ColorRect/jobdesk"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "game designer"
+
+[node name="dimas" type="Label" parent="ColorRect/jobdesk"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "game designer"
+
+[node name="amdhan" type="Label" parent="ColorRect/jobdesk"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 25
+text = "composer"
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 509.0
+offset_right = 649.0
+offset_bottom = 551.0
+theme_override_fonts/font = ExtResource("1_bi2oc")
+theme_override_font_sizes/font_size = 28
+text = "Back"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

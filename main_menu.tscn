@@ -109,6 +109,17 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_h85fx")
 text = "Settings"
 
+[node name="Credits" type="Button" parent="VBoxContainer"]
+self_modulate = Color(0.95158, 0.95158, 0.95158, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_aasa3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_h85fx")
+text = "Credits"
+
 [node name="exit" type="Button" parent="VBoxContainer"]
 self_modulate = Color(0.95158, 0.95158, 0.95158, 1)
 layout_mode = 2
@@ -122,4 +133,5 @@ text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
